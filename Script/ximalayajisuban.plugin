@@ -3,7 +3,7 @@
 #!author =https://t.me/GieGie444
 #!homepage = https://github.com/zz12300/zz12300/Script/ximalayajisuban.plugin
 #!icon=https://raw.githubusercontent.com/zz12300/zz12300/refs/heads/main/Tupian/ximalayajisuban.png
-#!date = 2024-10-11
+#!date = 2024-12-6
 
 [Rewrite]
 ^https?://adse\.wsa\.ximalaya\.com/ - reject-dict

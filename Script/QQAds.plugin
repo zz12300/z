@@ -1,0 +1,18 @@
+#!name= QQads
+#!desc= 去广告！QQ钱包&QQ浏览器
+#!author=
+#!homepage=https://github.com/zz12300/banyun/Script/QQAds.plugin
+#!icon=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/QQliulan.png
+#!date= 2024-12-07
+
+[Rewrite]
+# > QQ钱包
+# hostname = m.qianbao.qq.com
+^https?:\/\/m\.qianbao\.qq\.com\/pages\/walletHome\?invisible reject
+
+# > QQ浏览器
+# hostname = us.l.qq.com
+^https?:\/\/us\.l\.qq\.com\/exapp\?spsa=\d reject
+
+[MITM]
+hostname =m.qianbao.qq.com,us.1.qq.com

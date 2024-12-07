@@ -25,4 +25,5 @@
 # hostname = cdb.meituan.com
 ^https?:\/\/cdb\.meituan\.com\/marketing\/source\/getPageSlotList reject-dict
 
+[MITM]
 hostname = img.meituan.net, s3plus.meituan.net, flowplus.meituan.net,peisongapi.meituan.com,cdb.meituan.com

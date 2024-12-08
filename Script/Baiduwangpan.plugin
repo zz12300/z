@@ -8,8 +8,9 @@
 [Script]
 # >百度网盘
 http-response ^https?:\/\/pan.baidu.com.+(rest\/.+\/membership\/user|api\/user\/getinfo|act\/v2\/welfare\/list|api\/taskscore\/tasklist)\? script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/panda.js, requires-body=true, timeout=60, tag=panda
+[Rewrite]
 # > 百度网盘去广告
-# hostname = pan.baidu.com, ndstatic.cdn.bcebos.com, staticsns.cdn.bcebos.com, issuecdn.baidupcs.com, update.pan.baidu.com, fc-video.cdn.bcebos.com, rp.hpplay.cn
+
 ^https?:\/\/pan\.baidu\.com\/rest\/\d\.\d\/pcs\/adx reject
 ^https?:\/\/pan\.baidu\.com\/rest\/2\.0\/pcs\/ad reject
 ^https?:\/\/pan\.baidu\.com\/act\/v\d\/(bchannel|welfare)\/list reject

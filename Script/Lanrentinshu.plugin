@@ -1,0 +1,20 @@
+#!name = 懒人听书VIP
+#!desc = 解锁会员内容&去除广告！软件版本：低于8.5.12 
+#!homepage = https://github.com/zz12300/banyun/Script/Lanrentinshu.plugin
+#!icon =https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/lanrentinshu.png
+#!date = 2024-12-09
+
+[Script]
+# > 懒人听书vip
+http-response ^https?:\/\/(shapi|gzapi).(mting.info|lanrentingshu.com)\/(yyting\/userclient\/ClientGetUserInfo|lrts\/cgi\/login\/accountLogin) script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/lrts.js, requires-body=true, timeout=60, tag=lrts
+
+[Rewrite]
+# > 懒人听书
+# hostname = 118.178.214.118, dapis.mting.info, display.wting.info
+^https?:\/\/118\.178\.214\.118\/yyting\/advertclient\/ClientAdvertList\.action reject-img
+^https?:\/\/dapis\.mting\.info\/yyting\/advertclient\/ClientAdvertList\.action reject-img
+^https?:\/\/.*\/yyting\/advertclient\/ClientAdvertList.action reject
+^https?:\/\/display\.wting\.info\/.*.jpeg reject-200
+ 
+[MITM]
+hostname = shapi.mting.info, shapi.lanrentingshu.com, gzapi.lanrentingshu.com,118.178.214.118, dapis.mting.info, display.wting.info

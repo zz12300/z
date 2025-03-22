@@ -1,0 +1,14 @@
+#!name = 懒人听书
+#!desc = 软件版本:8.5.53解锁VIP
+#!author = https://t.me/GieGie777
+#!openUrl = 
+#!homepage = https://github.com/zz12300/banyun/Script/lanrentinshu.plugin
+#!icon = https://raw.https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/lanrentinshu.png
+#!date = 2025-3-22
+#!Edit = 
+[Script]
+# > 懒人听书vip
+http-response ^https?:\/\/(shapi|gzapi).(mting.info|lanrentingshu.com)\/(yyting\/userclient\/ClientGetUserInfo|lrts\/cgi\/login\/accountLogin) script-path=https://raw.githubusercontent.com/WeiGiegie/666/main/lrts.js, requires-body=true, timeout=60, tag=lrts
+
+[MITM]
+hostname = shapi.mting.info, shapi.lanrentingshu.com, gzapi.lanrentingshu.com, shapi.mting.info:443

@@ -1,7 +1,9 @@
 #!name=芒果TV
 #!desc=解锁
+#!author = https://t.me/GieGie777
+#!date = 2025-3
 
-#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1098.png
+#!icon=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/MgTV.png
 
 [Rewrite]
 ^https?://mobile.da.mgtv.com\/m\/page - reject

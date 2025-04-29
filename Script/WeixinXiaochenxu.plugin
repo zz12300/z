@@ -3,7 +3,7 @@
 #!author=
 #!update = 2025-4-30
 #!homepage = https://github.com/zz12300/banyun/Script/WeixinXiaochenxu.plugin
-#!icon =https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/ad20blocking.png
+#!icon =https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/adblocking.png
 
 [Rewrite]
 # > 滴滴出行

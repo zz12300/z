@@ -5,6 +5,14 @@
 #!homepage = https://github.com/zz12300/banyun/Script/WeixinXiaochenxu.plugin
 #!icon =https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/adblocking.png
 
+[Script]
+http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js,requires-body=true, timeout=60, tag=Meit
+uanNoAd
+
+
+http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js,requires-body=true, timeout=60, tag=Meit
+uanNoAd
+
 [Rewrite]
 # > 滴滴出行
 # hostname = res.xiaojukeji.com, common.diditaxi.com.cn, hd.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cn
@@ -22,6 +30,14 @@
 # > 美团充电宝小程序
 # hostname = cdb.meituan.com
 ^https?:\/\/cdb\.meituan\.com\/marketing\/source\/getPageSlotList reject-dict
+# > 美团外卖
+#美团
+^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/novelZone - reject-dict
+^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/resources - reject-dict
+^https:\/\/npay\.meituan\.com\/conch\/flow\/mypage-wallet-info - reject-dict
+^https:\/\/web\.meituan\.com\/newUser\/returnMoney\/popWindow - reject-dict
+^https:\/\/npay\.meituan\.com\/conch\/walletv3\/wechat-pop-window - reject-dict
+^https:\/\/api\.m\.jd\.com\/\?loginType=11 - reject-dict
 
 # > 顺丰快递小程序
 # hostname = mcs-mimp-web.sf-express.com, ucmp.sf-express.com
@@ -46,4 +62,4 @@
 
 
 [MITM]
-hostname = res.xiaojukeji.com, common.diditaxi.com.cn, hd.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cnnl,conf.diditaxi.com.cn,pt-starimg.didistatic.com, omgup*.xiaojukeji.com,aag.enmonster.com,cdb.meituan.com,mcs-mimp-web.sf-express.com, ucmp.sf-express.com,mp.weixin.qq.com,wx.17u.cn
+hostname = res.xiaojukeji.com, common.diditaxi.com.cn, hd.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cnnl,conf.diditaxi.com.cn,pt-starimg.didistatic.com, omgup*.xiaojukeji.com,aag.enmonster.com,cdb.meituan.com,mcs-mimp-web.sf-express.com, ucmp.sf-express.com,mp.weixin.qq.com,wx.17u.cn, web.meituan.com, npay.meituan.com

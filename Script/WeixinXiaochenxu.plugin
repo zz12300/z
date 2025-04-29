@@ -80,6 +80,7 @@ http-response ^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfi
 ^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/memberShow - reject-dict
 ^https:\/\/wx\.17u\.cn\/xcxhomeapi\/home\/converge - reject-dict
 ^https:\/\/wx\.17u\.cn\/platformpubapi\/customer\/lead\/getInfo - reject-dict
+^https:\/\/pic5\.40017\.cn\/i\/ori\/.*\.png reject
 
 # 丰巢 - 首页服务推广
 ^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage\/modulesAggregated\? mock-response-body data-type=text data="{}" status-code=200
@@ -95,4 +96,4 @@ http-response ^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfi
 ^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/info$ mock-response-body data-type=text data="{}" status-code=200
 
 [MITM]
-hostname = res.xiaojukeji.com, common.diditaxi.com.cn, hd.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cnnl,conf.diditaxi.com.cn,pt-starimg.didistatic.com, omgup*.xiaojukeji.com,aag.enmonster.com,cdb.meituan.com,mcs-mimp-web.sf-express.com, ucmp.sf-express.com,mp.weixin.qq.com,wx.17u.cn, web.meituan.com, npay.meituan.com,webchatapp.fcbox.com,htwkop.xiaojukeji.com
+hostname = res.xiaojukeji.com, common.diditaxi.com.cn, hd.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cnnl,conf.diditaxi.com.cn,pt-starimg.didistatic.com, omgup*.xiaojukeji.com,aag.enmonster.com,cdb.meituan.com,mcs-mimp-web.sf-express.com, ucmp.sf-express.com,mp.weixin.qq.com,wx.17u.cn, web.meituan.com, npay.meituan.com,webchatapp.fcbox.com,htwkop.xiaojukeji.com,pic5.40017.cn

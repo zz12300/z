@@ -6,15 +6,6 @@
 #!icon =https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/meituan.png
 
 
-[Script]
-http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js,requires-body=true, timeout=60, tag=Meit
-uanNoAd
-
-
-http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js,requires-body=true, timeout=60, tag=Meit
-uanNoAd
-
-
 [Rewrite]
 # > 美团 & 美团外卖
 # hostname = img.meituan.net, s3plus.meituan.net, flowplus.meituan.net
@@ -23,13 +14,6 @@ uanNoAd
 ^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg reject-dict
 ^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json reject-dict
 ^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ reject-dict 
-#美团
-^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/novelZone - reject-dict
-^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/resources - reject-dict
-^https:\/\/npay\.meituan\.com\/conch\/flow\/mypage-wallet-info - reject-dict
-^https:\/\/web\.meituan\.com\/newUser\/returnMoney\/popWindow - reject-dict
-^https:\/\/npay\.meituan\.com\/conch\/walletv3\/wechat-pop-window - reject-dict
-^https:\/\/api\.m\.jd\.com\/\?loginType=11 - reject-dict
 # 美团订单详情页更多推荐
 ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/recommend\/unity\/recommends reject-dict
 
@@ -38,4 +22,4 @@ uanNoAd
 ^https?:\/\/peisongapi\.meituan\.com\/client\/getInitiateImage reject-200
 
 [MITM]
-hostname = img.meituan.net, s3plus.meituan.net, flowplus.meituan.net,peisongapi.meituan.com,web.meituan.com, npay.meituan.com
+hostname = img.meituan.net, s3plus.meituan.net, flowplus.meituan.net,peisongapi.meituan.com

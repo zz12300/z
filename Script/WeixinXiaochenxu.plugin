@@ -1,0 +1,49 @@
+#!name=微信小程序净化
+#!desc=去除小程序广告  滴滴出行  滴滴青桔  怪兽充电  美团充电宝  顺风快递  微信公众号  同程旅行
+#!author=
+#!update = 2025-4-30
+#!homepage = https://github.com/zz12300/banyun/Script/WeixinXiaochenxu.plugin
+#!icon =https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/ad20blocking.png
+
+[Rewrite]
+# > 滴滴出行
+# hostname = res.xiaojukeji.com, common.diditaxi.com.cn, hd.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cn
+^https?:\/\/hd\.xiaojukeji\.com\/d reject-dict
+
+# > 滴滴青桔
+# hostname = pt-starimg.didistatic.com, omgup*.xiaojukeji.com
+^https?:\/\/pt-starimg\.didistatic\.com\/static\/starimg\/node\/.*.(jpg|png|gif) reject-200
+^https?:\/\/omgup[0-9]{1}\.xiaojukeji\.com\/api reject-200
+
+# > 怪兽充电 微信小程序
+# hostname = aag.enmonster.com
+^https?:\/\/aag\.enmonster\.com\/apa\/index\/advert\/skin reject
+
+# > 美团充电宝小程序
+# hostname = cdb.meituan.com
+^https?:\/\/cdb\.meituan\.com\/marketing\/source\/getPageSlotList reject-dict
+
+# > 顺丰快递小程序
+# hostname = mcs-mimp-web.sf-express.com, ucmp.sf-express.com
+^https?:\/\/mcs-mimp-web\.sf-express\.com\/mcs-mimp\/integralPlanet\/getCxAdvertiseList reject-dict
+^https?:\/\/ucmp-static\.sf-express\.com\/proxy\/wxbase\/wxTicket\/wxLiveStreamInfo\?pageNo reject-dict
+^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query reject-dict
+^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberManage\/memberEquity\/queryRecommendEquity reject-dict
+^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberActLengthy\/fullGiveActivityService\/fullGiveInfo reject-dict
+
+# > 微信
+# hostname = mp.weixin.qq.com
+# 公众号文章下方广告
+^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad response-body-replace-regex advertisement fmz200
+# 微信公众号去除商品推广
+^https?:\/\/mp\.weixin\.qq\.com\/mp\/cps_product_info\?action reject-dict
+
+#同城旅行
+^https:\/\/wx\.17u\.cn\/wxocbdapi\/adService reject-dict
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/listIcons reject-dict
+^https:\/\/wx\.17u\.cn\/platformpubapi\/card reject-dict
+^https:\/\/wx\.17u\.cn\/homemarketapi\/aggregator reject-dict
+
+
+[MITM]
+hostname = res.xiaojukeji.com, common.diditaxi.com.cn, hd.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cnnl,conf.diditaxi.com.cn,pt-starimg.didistatic.com, omgup*.xiaojukeji.com,aag.enmonster.com,cdb.meituan.com,mcs-mimp-web.sf-express.com, ucmp.sf-express.com,mp.weixin.qq.com,wx.17u.cn

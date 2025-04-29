@@ -7,9 +7,13 @@
 
 
 [Script]
-http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js
+http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js,requires-body=true, timeout=60, tag=Meit
+uanNoAd
 
-http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js
+
+http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js,requires-body=true, timeout=60, tag=Meit
+uanNoAd
+
 
 [Rewrite]
 # > 美团 & 美团外卖

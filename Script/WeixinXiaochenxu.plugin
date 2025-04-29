@@ -5,6 +5,14 @@
 #!homepage = https://github.com/zz12300/banyun/Script/WeixinXiaochenxu.plugin
 #!icon =https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/adblocking.png
 
+[Rule]
+# 微信公众号广告过滤
+DOMAIN-SUFFIX,wxs.qq.com,REJECT
+# 微信小程序通用规则
+DOMAIN,wxsnsdy.wxs.qq.com,REJECT
+DOMAIN,wxsmsdy.video.qq.com,REJECT
+DOMAIN,wxsnsdythumb.wxs.qq.com,REJECT
+
 [Script]
 http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js,requires-body=true, timeout=60, tag=Meit
 uanNoAd
@@ -12,6 +20,9 @@ uanNoAd
 
 http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js,requires-body=true, timeout=60, tag=Meit
 uanNoAd
+
+# 滴滴青桔 htwkop.xiaojukeji.com
+http-response ^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfig script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/WexinMiniPrograms/qingju/qingju.js, requires-body=true, tag=滴滴青桔去广告
 
 [Rewrite]
 # > 滴滴出行
@@ -54,12 +65,34 @@ uanNoAd
 # 微信公众号去除商品推广
 ^https?:\/\/mp\.weixin\.qq\.com\/mp\/cps_product_info\?action reject-dict
 
-#同城旅行
-^https:\/\/wx\.17u\.cn\/wxocbdapi\/adService reject-dict
-^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/listIcons reject-dict
-^https:\/\/wx\.17u\.cn\/platformpubapi\/card reject-dict
-^https:\/\/wx\.17u\.cn\/homemarketapi\/aggregator reject-dict
+#同程旅行
+^https:\/\/wx\.17u\.cn\/xcxhomeapi\/aggregator\/index - reject-dict
+^https:\/\/wx\.17u\.cn\/mytourapi\/mytrip\/blankflight - reject-dict
+^https:\/\/wx\.17u\.cn\/membermessageuserapi\/message\/list - reject-dict
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/messageBox - reject-dict
+^https:\/\/wx\.17u\.cn\/membermessageuserapi\/category\/getCategory - reject-dict
+^https:\/\/wx\.17u\.cn\/homemarketapi\/search\/recommend - reject-dict
+^https:\/\/wx\.17u\.cn\/mytourapi\/blankpage\/recommendList - reject-dict
+^https:\/\/wx\.17u\.cn\/homemarketapi\/aggregator\/index - reject-dict
+^https:\/\/wx\.17u\.cn\/wxocbdapi\/adService\/getAd - reject-dict
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/orderRemind - reject-dict
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/icons - reject-dict
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/memberShow - reject-dict
+^https:\/\/wx\.17u\.cn\/xcxhomeapi\/home\/converge - reject-dict
+^https:\/\/wx\.17u\.cn\/platformpubapi\/customer\/lead\/getInfo - reject-dict
 
+# 丰巢 - 首页服务推广
+^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage\/modulesAggregated\? mock-response-body data-type=text data="{}" status-code=200
+# 丰巢 - 首页丰巢直播
+^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage\/getHomeLiveInfo$ mock-response-body data-type=text data="{}" status-code=200
+# 丰巢 - 横幅和广告配置
+^https:\/\/dsp\.fcbox\.com\/adSearch\/ mock-response-body data-type=text data="{}" status-code=200
+# 丰巢 - 订单页面 - 邀请开通会员横幅
+^https:\/\/webchatapp\.fcbox\.com\/post\/suggestion\/query$ mock-response-body data-type=text data="{}" status-code=200
+# 丰巢 - 订单页面 - 好友助力
+^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/v2\/infoWithItems$ mock-response-body data-type=text data="{}" status-code=200
+# 丰巢 - 订单页面 - 悬浮窗
+^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/info$ mock-response-body data-type=text data="{}" status-code=200
 
 [MITM]
-hostname = res.xiaojukeji.com, common.diditaxi.com.cn, hd.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cnnl,conf.diditaxi.com.cn,pt-starimg.didistatic.com, omgup*.xiaojukeji.com,aag.enmonster.com,cdb.meituan.com,mcs-mimp-web.sf-express.com, ucmp.sf-express.com,mp.weixin.qq.com,wx.17u.cn, web.meituan.com, npay.meituan.com
+hostname = res.xiaojukeji.com, common.diditaxi.com.cn, hd.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cnnl,conf.diditaxi.com.cn,pt-starimg.didistatic.com, omgup*.xiaojukeji.com,aag.enmonster.com,cdb.meituan.com,mcs-mimp-web.sf-express.com, ucmp.sf-express.com,mp.weixin.qq.com,wx.17u.cn, web.meituan.com, npay.meituan.com,webchatapp.fcbox.com,htwkop.xiaojukeji.com

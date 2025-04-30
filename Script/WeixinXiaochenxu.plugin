@@ -81,8 +81,7 @@ http-response ^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfi
 ^https:\/\/wx\.17u\.cn\/xcxhomeapi\/home\/converge - reject-dict
 ^https:\/\/wx\.17u\.cn\/platformpubapi\/customer\/lead\/getInfo - reject-dict
 ^https:\/\/pic5\.40017\.cn\/i\/ori\/.*\.(png|gif|jpg)$ reject-img
-^https:\/\/file\.40017\.cn\/.*\.html response-body-replace-regex "<img src=\"https:\/\/pic5\.40017\.cn\/i\/ori\/1Cz2IZMfTlC\.gif\".*?>" ""
-^https:\/\/file\.40017\.cn\/.*\.js response-body-replace-regex "showAdGif\\(.*?1Cz2IZMfTlC\.gif.*?\\);" ""
+
 # 丰巢 - 首页服务推广
 ^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage\/modulesAggregated\? mock-response-body data-type=text data="{}" status-code=200
 # 丰巢 - 首页丰巢直播

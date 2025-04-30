@@ -14,12 +14,10 @@ DOMAIN,wxsmsdy.video.qq.com,REJECT
 DOMAIN,wxsnsdythumb.wxs.qq.com,REJECT
 
 [Script]
-http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js,requires-body=true, timeout=60, tag=Meit
-uanNoAd
+http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js,requires-body=true, timeout=60, tag=美团主页
 
 
-http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js,requires-body=true, timeout=60, tag=Meit
-uanNoAd
+http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js,requires-body=true, timeout=60, tag=美团主页
 
 # 滴滴青桔 htwkop.xiaojukeji.com
 http-response ^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfig script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/WexinMiniPrograms/qingju/qingju.js, requires-body=true, tag=滴滴青桔去广告

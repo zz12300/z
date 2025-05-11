@@ -1,0 +1,10 @@
+ # 中国直连
+# NAME: CN REGION
+# AUTHOR: 
+# REPO: https://github.com/zz12300/banyun/rule/CN.list
+# UPDATED: 2024-05-11 
+# DOMAIN: 
+# DOMAIN-SUFFIX: 0
+# IP-CIDR: 
+# IP-CIDR6: 
+GEOIP,cn,DIRECT

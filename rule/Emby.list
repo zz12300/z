@@ -3,11 +3,10 @@
 # REPO: https://github.com/zz12300/banyun/tree/main/rule/Emby.list
 # UPDATED: 2025-4-26
 # DOMAIN: 
-# DOMAIN-SUFFIX: 4
+# DOMAIN-SUFFIX: 3
 # USER-AGENT: 
 # TOTAL: 
-DOMAIN-SUFFIX,cf.niceduck.lol
-DOMAIN-SUFFIX,dpxcf.niceduck.lol
-DOMAIN-SUFFIX,jcf.niceduck.lol
+DOMAIN-SUFFIX,emby.moe
+DOMAIN-SUFFIX,niceduck.lol
 DOMAIN-SUFFIX,embyplus.org
 DOMAIN-SUFFIX,cfloacl.emby.moe

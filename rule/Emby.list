@@ -10,3 +10,5 @@ DOMAIN-SUFFIX,emby.moe
 DOMAIN-SUFFIX,niceduck.lol
 DOMAIN-SUFFIX,embyplus.org
 DOMAIN-SUFFIX,cfloacl.emby.moe
+DOMAIN-SUFFIX,services.com
+IP-CIDR,111.30.187.213/32

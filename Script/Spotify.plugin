@@ -1,5 +1,5 @@
 #!name = 解锁&翻译&去广告
-#!desc = 将Spotify的外语歌词翻译为简体中文
+#!desc = 将Spotify的外语歌词翻译为简体中文& 解锁VIP，去除部分广告。注意：音质只能设置为高！超高可能无法播放
 #!openUrl = 
 #!author =app2smile[https://DualSubs.github.io/guide/spotify]
 #!homepage = https://github.com/zz12300/banyun/tree/main/Script/Spotify.plugin

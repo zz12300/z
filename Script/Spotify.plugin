@@ -40,5 +40,5 @@ http-response ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/(
 http-response ^https?:\/\/spclient\.wg\.spotify\.com\/color-lyrics\/v2\/track\/\w+\?(.*)subtype=External script-path=https://github.com/DualSubs/Universal/releases/latest/download/External.Lyrics.response.bundle.js, requires-body=true, binary-body-mode=true, tag=🍿️ DualSubs.Spotify.External.Lyrics.response.proto, argument="[{Types},{Languages[0]},{Languages[1]},{Vendor},{LrcVendor},{LogLevel}]"
 
 [MITM]
-hostname = api.spotify.com, spclient.wg.spotify.commit,-*.wg.spotify.com
+hostname = api.spotify.com, spclient.wg.spotify.commit
 

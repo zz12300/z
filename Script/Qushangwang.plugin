@@ -1,10 +1,16 @@
 #!name = 去上网去广告
 #!desc=去除去上网开屏广告
-#!openUrl = 2025-05-30 03:00
+#!openUrl =
 #!author =zz1230
 #!homepage = https://github.com/zz12300/banyun/tree/main/Script/Qushangwang.plugin
 #!icon = https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/Qushangwang.png
-#!Edit = 
+#!Edit =  2025-05-30 03:00
+
+[Rule]
+DOMAIN-SUFFIX,img2.360buyimg.com,REJECT
+DOMAIN-SUFFIX,cdn3.magicacid.cn,REJECT
+DOMAIN-SUFFIX,oss.cdn.aiclk.com,REJECT
+
 
 [Rewrite]
 #去上网开屏广告去除

@@ -1,0 +1,19 @@
+#!name = 去上网去广告
+#!desc=去除去上网开屏广告
+#!openUrl = 
+#!author =zz1230
+#!homepage = https://github.com/zz12300/banyun/tree/main/Script/Qushangwang.plugin
+#!icon = https://
+#!Edit = 
+
+[Rewrite]
+#去上网开屏广告去除
+^https?:\/\/img2\.360buyimg\.com\/tgx\/jfs\/t1\/.*\.(jpg|png)$ reject
+^https?:\/\/cdn3\.magicacid\.cn\/dsp\/\d+\/.*\.(jpg|png)$ reject
+^https?:\/\/oss\.cdn\.aiclk\.com\/live\/cover\/.*\.(jpg|png)$ reject
+^https?:\/\/oss\.cdn\.aiclk\.com\/customer\/\d+\/.*\.(jpg|png)$ reject
+# 可选兜底：拦截所有来自这些域的图片
+^https?:\/\/(img2\.360buyimg\.com|cdn3\.magicacid\.cn|oss\.cdn\.aiclk\.com)\/.*\.(jpg|png|webp)$ reject
+
+[MITM]
+hostname = img2.360buyimg.com, cdn3.magicacid.cn, oss.cdn.aiclk.com

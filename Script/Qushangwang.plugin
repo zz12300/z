@@ -9,17 +9,19 @@
 
 
 [Rule]
-DOMAIN,dualstack-logs.amap.com,REJECT
+
 DOMAIN,logrcv.aiclk.com,REJECT
 DOMAIN,rcv.aiclk.com,REJECT
 DOMAIN,show-api.1sapp.com,REJECT
 DOMAIN,api.wxcjgg.cn,REJECT
 DOMAIN,api.fu.xcultur.com,REJECT
-
-
+DOMAIN,usr-api.1sapp.com,REJECT
+DOMAIN,ccc-x.jd.com,REJECT
+DOMAIN,trace-api.aiclk.com,REJECT
 [Rewrite]
 #去上网开屏广告去除
 ^https?:\/\/img2\.360buyimg\.com\/tgx\/jfs\/t1\/.*\.(jpg|png)$ reject
+^https?:\/\/m15\.360buyimg\.com\/.*\.(jpg|png|jpeg|webp)$ reject
 ^https?:\/\/cdn3\.magicacid\.cn\/dsp\/\d+\/.*\.(jpg|png)$ reject
 ^https?:\/\/oss\.cdn\.aiclk\.com\/live\/cover\/.*\.(jpg|png)$ reject
 ^https?:\/\/oss\.cdn\.aiclk\.com\/customer\/\d+\/.*\.(jpg|png)$ reject
@@ -27,4 +29,4 @@ DOMAIN,api.fu.xcultur.com,REJECT
 ^https?:\/\/(img2\.360buyimg\.com|cdn3\.magicacid\.cn|oss\.cdn\.aiclk\.com)\/.*\.(jpg|png|webp)$ reject
 
 [MITM]
-hostname = img2.360buyimg.com, cdn3.magicacid.cn, oss.cdn.aiclk.com,dualstack-logs.amap.com, logrcv.aiclk.com, rcv.aiclk.com, show-api.1sapp.com, api.wxcjgg.cn, api.fu.xcultur.com
+hostname = img2.360buyimg.com,m15.360buyimg.com,cdn3.magicacid.cn, oss.cdn.aiclk.com,

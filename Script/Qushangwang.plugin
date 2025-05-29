@@ -7,7 +7,15 @@
 #!date = 2025-05-30  03:21
 #!Edit =  
 
+
 [Rule]
+DOMAIN,dualstack-logs.amap.com,REJECT
+DOMAIN,logrcv.aiclk.com,REJECT
+DOMAIN,rcv.aiclk.com,REJECT
+DOMAIN,show-api.1sapp.com,REJECT
+DOMAIN,api.wxcjgg.cn,REJECT
+DOMAIN,api.fu.xcultur.com,REJECT
+
 
 [Rewrite]
 #去上网开屏广告去除
@@ -19,4 +27,4 @@
 ^https?:\/\/(img2\.360buyimg\.com|cdn3\.magicacid\.cn|oss\.cdn\.aiclk\.com)\/.*\.(jpg|png|webp)$ reject
 
 [MITM]
-hostname = img2.360buyimg.com, cdn3.magicacid.cn, oss.cdn.aiclk.com
+hostname = img2.360buyimg.com, cdn3.magicacid.cn, oss.cdn.aiclk.com,dualstack-logs.amap.com, logrcv.aiclk.com, rcv.aiclk.com, show-api.1sapp.com, api.wxcjgg.cn, api.fu.xcultur.com

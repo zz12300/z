@@ -9,7 +9,7 @@
 
 
 [Rule]
-
+URL-REGEX,^https?:\/\/gdfp\.gifshow\.com\/rest\/infra\/gdfp\/a\/q\?.*type=SDK_INIT.*,REJECT
 
 [Rewrite]
 #去上网开屏广告去除
@@ -19,8 +19,9 @@
 ^https?:\/\/oss\.cdn\.aiclk\.com\/live\/cover\/.*\.(jpg|png)$ reject
 ^https?:\/\/oss\.cdn\.aiclk\.com\/customer\/\d+\/.*\.(jpg|png)$ reject
 ^https?:\/\/p2-lm\.adukwai\.com\/bs2\/adUnionVideo\/.*\.(jpg|gif|png)$ reject
+^https?:\/\/images\.pinduoduo\.com\/mrk\/.*\.png$ reject
 # 可选兜底：拦截所有来自这些域的图片
 ^https?:\/\/(img2\.360buyimg\.com|cdn3\.magicacid\.cn|oss\.cdn\.aiclk\.com)\/.*\.(jpg|png|webp)$ reject
 
 [MITM]
-hostname = img2.360buyimg.com,m15.360buyimg.com,cdn3.magicacid.cn, oss.cdn.aiclk.com,p2-lm.adukwai.com
+hostname = img2.360buyimg.com,m15.360buyimg.com,cdn3.magicacid.cn, oss.cdn.aiclk.com,p2-lm.adukwai.com,images.pinduoduo.com

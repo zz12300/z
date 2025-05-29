@@ -18,7 +18,7 @@
 ^https?:\/\/cdn3\.magicacid\.cn\/dsp\/\d+\/.*\.(jpg|png)$ reject
 ^https?:\/\/oss\.cdn\.aiclk\.com\/live\/cover\/.*\.(jpg|png)$ reject
 ^https?:\/\/oss\.cdn\.aiclk\.com\/customer\/\d+\/.*\.(jpg|png)$ reject
-^https?:\/\/p2-lm\.adukwai\.com\/bs2\/adUnionVideo\/.*\.(jpg|mp4|gif|png|webp|jpeg)$ reject
+^https?:\/\/p2-lm\.adukwai\.com\/bs2\/adUnionVideo\/.*\.(jpg|gif|png)$ reject
 # 可选兜底：拦截所有来自这些域的图片
 ^https?:\/\/(img2\.360buyimg\.com|cdn3\.magicacid\.cn|oss\.cdn\.aiclk\.com)\/.*\.(jpg|png|webp)$ reject
 

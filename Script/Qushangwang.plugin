@@ -18,6 +18,8 @@ DOMAIN,api.fu.xcultur.com,REJECT
 DOMAIN,usr-api.1sapp.com,REJECT
 DOMAIN,ccc-x.jd.com,REJECT
 DOMAIN,trace-api.aiclk.com,REJECT
+DOMAIN,mobads-pre-config.cdn.bcebos.com,REJECT
+DOMAIN,p2-lm.adukwai.com,REJECT
 [Rewrite]
 #去上网开屏广告去除
 ^https?:\/\/img2\.360buyimg\.com\/tgx\/jfs\/t1\/.*\.(jpg|png)$ reject
@@ -25,6 +27,8 @@ DOMAIN,trace-api.aiclk.com,REJECT
 ^https?:\/\/cdn3\.magicacid\.cn\/dsp\/\d+\/.*\.(jpg|png)$ reject
 ^https?:\/\/oss\.cdn\.aiclk\.com\/live\/cover\/.*\.(jpg|png)$ reject
 ^https?:\/\/oss\.cdn\.aiclk\.com\/customer\/\d+\/.*\.(jpg|png)$ reject
+^https?:\/\/p2-lm\.adukwai\.com\/bs2\/adUnionVideo\/94484fa218b646e7a6c69dbdd934eb59\.jpg$ reject
+
 # 可选兜底：拦截所有来自这些域的图片
 ^https?:\/\/(img2\.360buyimg\.com|cdn3\.magicacid\.cn|oss\.cdn\.aiclk\.com)\/.*\.(jpg|png|webp)$ reject
 

@@ -1,9 +1,9 @@
 #!name = 去上网去广告
 #!desc=去除去上网开屏广告
-#!openUrl = 
+#!openUrl = 2025-05-30 03:00
 #!author =zz1230
 #!homepage = https://github.com/zz12300/banyun/tree/main/Script/Qushangwang.plugin
-#!icon = https://
+#!icon = https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/Qushangwang.png
 #!Edit = 
 
 [Rewrite]

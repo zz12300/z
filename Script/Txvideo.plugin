@@ -1,0 +1,16 @@
+#!name = 腾讯视频
+#!desc=腾讯视频去广告
+#!openUrl =
+#!author =
+#!homepage = https://github.com/zz12300/banyun/tree/main/Script/Txvideo.plugin
+https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/tenxunshipin.png
+#!date = 2025-05-31  14:29
+#!Edit =  
+
+[Rule]
+IP-CIDR,47.110.187.87/32,REJECT,no-resolve
+OR,((DOMAIN,pgdt.gtimg.cn),AND,((USER-AGENT,"live4iphoneRel*"),(IP-CIDR,0.0.0.0/0,no-resolve))),REJECT-DROP
+URL-REGEX,"^https:\/\/ossgw\.alicdn\.com\/creatives-assets/prod/feupload/user",REJECT
+
+[MITM]
+hostname = ossgw.alicdn.com

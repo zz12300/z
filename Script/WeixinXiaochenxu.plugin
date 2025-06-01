@@ -12,6 +12,7 @@ DOMAIN-SUFFIX,wxs.qq.com,REJECT
 DOMAIN,wxsnsdy.wxs.qq.com,REJECT
 DOMAIN,wxsmsdy.video.qq.com,REJECT
 DOMAIN,wxsnsdythumb.wxs.qq.com,REJECT
+DOMAIN,umini.shujupie.com,REJECT
 
 [Script]
 http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js,requires-body=true, timeout=60, tag=美团主页

@@ -1,0 +1,120 @@
+#!name=微信小程序净化
+#!desc=去除小程序广告!  滴滴出行、滴滴青桔、怪兽充电、美团外卖&美团充电宝、顺风快递、微信公众号、同程旅行
+#!icon=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/adblocking.png
+#!update=2025-4-30
+#!homepage=https://github.com/zz12300/banyun/Script/WeixinXiaochenxu.plugin
+
+[Rule]
+# 微信公众号广告过滤
+DOMAIN-SUFFIX,wxs.qq.com,REJECT
+# 微信小程序通用规则
+DOMAIN,wxsnsdy.wxs.qq.com,REJECT
+DOMAIN,wxsmsdy.video.qq.com,REJECT
+DOMAIN,wxsnsdythumb.wxs.qq.com,REJECT
+DOMAIN,umini.shujupie.com,REJECT
+
+[URL Rewrite]
+# hostname = aag.enmonster.com
+^https?:\/\/aag\.enmonster\.com\/apa\/index\/advert\/skin - reject
+
+[Body Rewrite]
+http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad advertisement fmz200
+
+[Map Local]
+# hostname = res.xiaojukeji.com, common.diditaxi.com.cn, hd.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cn
+^https?:\/\/hd\.xiaojukeji\.com\/d data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+# hostname = pt-starimg.didistatic.com, omgup*.xiaojukeji.com
+^https?:\/\/pt-starimg\.didistatic\.com\/static\/starimg\/node\/.*.(jpg|png|gif) data-type=text data=" " status-code=200
+
+^https?:\/\/omgup[0-9]{1}\.xiaojukeji\.com\/api data-type=text data=" " status-code=200
+
+# hostname = cdb.meituan.com
+^https?:\/\/cdb\.meituan\.com\/marketing\/source\/getPageSlotList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+#美团
+^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/novelZone data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/resources data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/npay\.meituan\.com\/conch\/flow\/mypage-wallet-info data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/web\.meituan\.com\/newUser\/returnMoney\/popWindow data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/npay\.meituan\.com\/conch\/walletv3\/wechat-pop-window data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/api\.m\.jd\.com\/\?loginType=11 data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+# hostname = mcs-mimp-web.sf-express.com, ucmp.sf-express.com
+^https?:\/\/mcs-mimp-web\.sf-express\.com\/mcs-mimp\/integralPlanet\/getCxAdvertiseList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/ucmp-static\.sf-express\.com\/proxy\/wxbase\/wxTicket\/wxLiveStreamInfo\?pageNo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberManage\/memberEquity\/queryRecommendEquity data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberActLengthy\/fullGiveActivityService\/fullGiveInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+# 微信公众号去除商品推广
+^https?:\/\/mp\.weixin\.qq\.com\/mp\/cps_product_info\?action data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+#同程旅行
+^https:\/\/wx\.17u\.cn\/xcxhomeapi\/aggregator\/index data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/wx\.17u\.cn\/mytourapi\/mytrip\/blankflight data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/wx\.17u\.cn\/membermessageuserapi\/message\/list data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/messageBox data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/wx\.17u\.cn\/membermessageuserapi\/category\/getCategory data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/wx\.17u\.cn\/homemarketapi\/search\/recommend data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/wx\.17u\.cn\/mytourapi\/blankpage\/recommendList data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/wx\.17u\.cn\/homemarketapi\/aggregator\/index data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/wx\.17u\.cn\/wxocbdapi\/adService\/getAd data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/orderRemind data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/icons data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/memberShow data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/wx\.17u\.cn\/xcxhomeapi\/home\/converge data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/wx\.17u\.cn\/platformpubapi\/customer\/lead\/getInfo data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https:\/\/pic5\.40017\.cn\/i\/ori\/.*\.(png|gif|jpg)$ data-type=tiny-gif status-code=200
+
+# 丰巢 - 首页服务推广
+^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage\/modulesAggregated\? data-type=text data="{}" status-code=200 header="Content-Type:text/plain"
+
+# 丰巢 - 首页丰巢直播
+^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/api\/v2\/clientPage\/getHomeLiveInfo$ data-type=text data="{}" status-code=200 header="Content-Type:text/plain"
+
+# 丰巢 - 横幅和广告配置
+^https:\/\/dsp\.fcbox\.com\/adSearch\/ data-type=text data="{}" status-code=200 header="Content-Type:text/plain"
+
+# 丰巢 - 订单页面 - 邀请开通会员横幅
+^https:\/\/webchatapp\.fcbox\.com\/post\/suggestion\/query$ data-type=text data="{}" status-code=200 header="Content-Type:text/plain"
+
+# 丰巢 - 订单页面 - 好友助力
+^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/v2\/infoWithItems$ data-type=text data="{}" status-code=200 header="Content-Type:text/plain"
+
+# 丰巢 - 订单页面 - 悬浮窗
+^https:\/\/webchatapp\.fcbox\.com\/fcboxactivityweb\/marketingEntrance\/info$ data-type=text data="{}" status-code=200 header="Content-Type:text/plain"
+
+[Script]
+美团主页 = type=http-response, pattern=^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query, script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js, requires-body=true, timeout=60
+
+美团主页 = type=http-response, pattern=^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate, script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/MeituanNoAd.js, requires-body=true, timeout=60
+
+# 滴滴青桔 htwkop.xiaojukeji.com
+滴滴青桔去广告 = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfig, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/WexinMiniPrograms/qingju/qingju.js, requires-body=true
+
+[MITM]
+hostname = %APPEND% res.xiaojukeji.com, common.diditaxi.com.cn, hd.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cnnl, conf.diditaxi.com.cn, pt-starimg.didistatic.com, omgup*.xiaojukeji.com, aag.enmonster.com, cdb.meituan.com, mcs-mimp-web.sf-express.com, ucmp.sf-express.com, mp.weixin.qq.com, wx.17u.cn, web.meituan.com, npay.meituan.com, webchatapp.fcbox.com, htwkop.xiaojukeji.com, pic5.40017.cn

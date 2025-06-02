@@ -1,0 +1,26 @@
+#!name=美团
+#!desc=去除广告！美团外卖&美团众包
+#!icon=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/meituan.png
+#!update=2024-12-07 23:30
+#!homepage=https://github.com/zz12300/banyun/Script/MeiTuan.plugin
+
+[Map Local]
+# hostname = img.meituan.net, s3plus.meituan.net, flowplus.meituan.net
+^https?:\/\/wmapi\.meituan\.com\/api\/v7\/(loadInfo|openscreen|startpicture)\? data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/(s3plus|flowplus)\.meituan\.net\/v\d\/\w+\/linglong\/\w+\.(gif|jpg|mp4) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/img\.meituan\.net\/bizad\/bizad_brandCpt_\d+\.jpg data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/s3plus\.meituan\.net\/ocean-blk-index\/index\/blk_conf_73\.json data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+^https?:\/\/s3plus\.meituan\.net\/v1\/mss_\w+\/(brandcpt-vedio|waimai-alita)\/\w+\.zip$ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+# 美团订单详情页更多推荐
+^https?:\/\/apimobile\.meituan\.com\/group\/v1\/recommend\/unity\/recommends data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+# hostname = peisongapi.meituan.com
+^https?:\/\/peisongapi\.meituan\.com\/client\/getInitiateImage data-type=text data=" " status-code=200
+
+[MITM]
+hostname = %APPEND% img.meituan.net, s3plus.meituan.net, flowplus.meituan.net, peisongapi.meituan.com

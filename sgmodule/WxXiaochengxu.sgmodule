@@ -6,7 +6,11 @@
 
 [Rule]
 # 微信公众号广告过滤
-DOMAIN-SUFFIX,wxs.qq.com,REJECT
+DOMAIN,wxa.wxs.qq.com,REJECT
+DOMAIN,wximg.wxs.qq.com,REJECT
+DOMAIN,wxsmw.wxs.qq.com,REJECT
+
+
 # 微信小程序通用规则
 DOMAIN,wxsnsdy.wxs.qq.com,REJECT
 DOMAIN,wxsmsdy.video.qq.com,REJECT
@@ -117,4 +121,4 @@ http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad advertisement fmz
 滴滴青桔去广告 = type=http-response, pattern=^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfig, script-path=https://raw.githubusercontent.com/mist-whisper/Script/refs/heads/master/WexinMiniPrograms/qingju/qingju.js, requires-body=true
 
 [MITM]
-hostname = %APPEND% res.xiaojukeji.com, common.diditaxi.com.cn, hd.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cnnl, conf.diditaxi.com.cn, pt-starimg.didistatic.com, omgup*.xiaojukeji.com, aag.enmonster.com, cdb.meituan.com, mcs-mimp-web.sf-express.com, ucmp.sf-express.com, mp.weixin.qq.com, wx.17u.cn, web.meituan.com, npay.meituan.com, webchatapp.fcbox.com, htwkop.xiaojukeji.com, pic5.40017.cn
+hostname = %APPEND% res.xiaojukeji.com, common.diditaxi.com.cn, hd.xiaojukeji.com, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, conf.diditaxi.com.cnnl, conf.diditaxi.com.cn, pt-starimg.didistatic.com, omgup*.xiaojukeji.com, aag.enmonster.com, cdb.meituan.com, mcs-mimp-web.sf-express.com, ucmp.sf-express.com, mp.weixin.qq.com, wx.17u.cn, web.meituan.com, npay.meituan.com, webchatapp.fcbox.com, htwkop.xiaojukeji.com, pic5.40017.cn,wximg.wxs.qq.com,wxsmw.wxs.qq.com

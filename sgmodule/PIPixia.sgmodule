@@ -27,4 +27,4 @@ PPX = type=http-response, pattern=^https?:\/\/.+\.pipix\.com\/bds\/user\/check_i
 
 
 [MITM]
-hostname = %APPEND% api.pipix.com, api5-lq.pipix.com
+hostname = %APPEND% api.pipix.com, api5-lq.pipix.com,*.pipix.com

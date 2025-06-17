@@ -8,4 +8,4 @@
 http-response https://xluser-ssl.xunlei.com/xluser.core.login/v3/getuserinfo script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/xun.js, requires-body=true, timeout=60, tag=xunlei
 
 [MITM]
-hostname = xluser-ssl.xunlei.com
+hostname = xluser-ssl.xunlei.com,*.pan.xunlei.com

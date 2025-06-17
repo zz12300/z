@@ -1,4 +1,3 @@
-#作者：@Maro162926
 var body = $response.body;
 var obj = JSON.parse(body);
 

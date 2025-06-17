@@ -1,0 +1,11 @@
+#!name=迅雷
+#!desc=迅雷会员解锁
+#!author=Marol62926
+#!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/thunder.png
+#!homepage=https://github.com/zz12300/banyun/tree/main/Script/Xunlei.plugin
+
+[Script]
+http-response https://xluser-ssl.xunlei.com/xluser.core.login/v3/getuserinfo script-path=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/Xun.js, requires-body=true, timeout=60, tag=xunlei
+
+[MITM]
+hostname = xluser-ssl.xunlei.com

@@ -10,8 +10,7 @@
 
 
 [Script]
-https://xluser-ssl.xunlei.com/xluser.core.login/v3/getuserinfo url script-response-body https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/Xunlei.js
-
+https://xluser-ssl.xunlei.com/xluser.core.login/v3/getuserinfo url script-response-body https:https://github.com/zz12300/banyun/js/Xunlei.js
 
 
 [MITM]

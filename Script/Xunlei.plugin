@@ -9,12 +9,12 @@
 #!author=Marol62926
 
 
-
+[Script]
 https://xluser-ssl.xunlei.com/xluser.core.login/v3/getuserinfo url script-response-body https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/js/Xunlei.js
 
 
 
-
+[MITM]
 hostname = xluser-ssl.xunlei.com
 
 

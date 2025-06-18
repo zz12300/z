@@ -34,8 +34,8 @@
 | 项目名称 | 简介 | 🌟Star |
 |----------|------|--------|
 
-| [loon-rules](https://github.com/12300/loon-rules) | 🛡 Loon 广告屏蔽规则合集 | ⭐⭐ |
-| [dns-tools](https://github.com/12300/dns-tools) | 🔍 DNS污染测试与隐私工具集 | ⭐ |
+| [loon-rules](https://github.com/zz12300/z/tree/main/Script) | 🛡 Loon规则插件 | ⭐⭐ |
+| [dns-tools](https://github.com/zz12300/z/tree/main/sgmodule) | 🔍 Surge规则模块 | ⭐ |
 
 > 👉 更多项目请访问：[github.com/12300](https://github.com/12300)
 

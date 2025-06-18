@@ -32,10 +32,10 @@
 ## 🚀 精选项目
 | 项目         | 简介             | ⭐ Star |
 |--------------|------------------|--------|
-|Loon插件|🔗[插件](https://github.com/zz12300/z/tree/main/Script) |  ✅    |
-|Surge模块|🔗[模块](https://github.com/zz12300/z/tree/main/sgmodule) |  ✅    |
-|分流分流|🔗[分流](https://github.com/zz12300/z/tree/main/rule) |  ✅  |
-|可莉Loon配置|⚙️[配置](https://github.com/zz12300/z/blob/main/Loon.conf#L2) |  ✅    |
+|Loon插件| 🔗 [插件](https://github.com/zz12300/z/tree/main/Script) |  ✅    |
+|Surge模块| 🔗 [模块](https://github.com/zz12300/z/tree/main/sgmodule) |  ✅    |
+|分流分流| 🔗 [分流](https://github.com/zz12300/z/tree/main/rule) |  ✅  |
+|可莉Loon配置| ⚙️ [配置](https://github.com/zz12300/z/blob/main/Loon.conf#L2) |  ✅    |
 > 👉 更多项目请访问：[github.com/12300](https://github.com/12300)
 
 ---

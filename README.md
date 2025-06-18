@@ -1,5 +1,5 @@
 <!-- 欢迎签名 -->
-[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=你好，欢迎来到我的GitHub！;我是12300，一个热爱编程的开发者✨;持续学习，共建开源🌱&font=Fira+Code&pause=1000&color=00BFFF&width=1000&height=45&center=true&vCenter=true)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com/?lines=你好，欢迎来到我的GitHub！;我是12300✨;持续学习，共建开源🌱&font=Fira+Code&pause=1000&color=00BFFF&width=1000&height=45&center=true&vCenter=true)](https://git.io/typing-svg)
 
 ---
 

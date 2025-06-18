@@ -34,9 +34,10 @@
 | 项目名称 | 简介 | 🌟Star |
 |----------|------|--------|
 
-| [loon](https://github.com/zz12300/z/tree/main/Script) |   🔍 Loon规则插件 | ⭐⭐ |
-| [Surge](https://github.com/zz12300/z/tree/main/sgmodule) | 🔍 Surge规则模块 | ⭐ |
-
+| [loon](https://github.com/zz12300/z/tree/main/Script)    | 🔍 Loon规则插件   | ⭐⭐ |
+| [Surge](https://github.com/zz12300/z/tree/main/sgmodule) | 🔍 Surge规则模块  | ⭐⭐ |
+| [ 分流] (https://github.com/zz12300/z/tree/main/rule)     |🔍分流规则|        | ⭐⭐ |
+| [可莉Loon配置](https://github.com/zz12300/z/blob/main/Loon.conf#L2)|         | ⭐⭐ |
 > 👉 更多项目请访问：[github.com/12300](https://github.com/12300)
 
 ---

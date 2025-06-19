@@ -27,7 +27,7 @@
 #^https:\/\/www\.bing\.com\/(search|new) header-add X-Forwarded-For 1.1.1.1
 
 [Script]
-http-request ^https:\/\/www\.bing\.com\/(search|new) script-path = https://raw.githubusercontent.com/Moli-X/Resources/main/Script/BingAI.js, requires-body = false, tag = Bing AI
+http-request ^https:\/\/www\.bing\.com\/(search|new) script-path =https://raw.githubusercontent.com/zz12300/z/refs/heads/main/js/BingAi.js, requires-body = false, tag = Bing AI
 
 [MITM]
 hostname = www.bing.com

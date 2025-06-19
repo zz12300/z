@@ -10,19 +10,19 @@
 
 [Script]
 # > 酷我音乐_会员
-http-response ^https?:\/\/(?:musicpay|nmobi|vip1|audiobookpay|tingshu)\.kuwo\.cn\/(?:music\.pay\?newver=\d+|mobi.s\?f=kwxs|vip\/(?:enc\/user\/vip\?op=ui&uid=|v2\/theme\?op=gd)|a\.p|v2\/api\/pay\/user\/info) script-path=https://github.com/zz12300/z/blob/main/js/kuwo.js, requires-body=true, timeout=60 ,tag=酷我音乐
+http-response ^https?:\/\/(?:musicpay|nmobi|vip1|audiobookpay|tingshu)\.kuwo\.cn\/(?:music\.pay\?newver=\d+|mobi.s\?f=kwxs|vip\/(?:enc\/user\/vip\?op=ui&uid=|v2\/theme\?op=gd)|a\.p|v2\/api\/pay\/user\/info) script-path=https://github.com/zz12300/z/blob/main/Script/Kuwo.js, requires-body=true, timeout=60 ,tag=酷我音乐
 
 # > 酷我音乐_搜索框处理
-http-response https?:\/\/searchrecterm\.kuwo\.cn\/recterm\.s script-path=https://github.com/zz12300/z/blob/main/js/kuwomusic.js, requires-body=true, timeout=60 ,tag=kuwomusic_14
+http-response https?:\/\/searchrecterm\.kuwo\.cn\/recterm\.s script-path=https://github.com/zz12300/z/blob/main/js/kuwo.js, requires-body=true, timeout=60 ,tag=kuwomusic_14
 
 # > 酷我音乐_去除首页轮播广告和tips
-http-response https?:\/\/mgxhtj\.kuwo\.cn\/mgxh\.s script-path=https://github.com/zz12300/z/blob/main/js/kuwomusic.js, requires-body=true, timeout=60 ,tag=kuwomusic_16
+http-response https?:\/\/mgxhtj\.kuwo\.cn\/mgxh\.s script-path=https://github.com/zz12300/z/blob/main/js/kuwo.js, requires-body=true, timeout=60 ,tag=kuwomusic_16
 
 # > 酷我音乐_去除会员页广告
-http-response https?:\/\/appi\.kuwo\.cn\/kuwopay\/vip-tab\/page\/cells script-path=https://github.com/zz12300/z/blob/main/js/kuwomusic.js, requires-body=true, timeout=60 ,tag=kuwomusic_18
+http-response https?:\/\/appi\.kuwo\.cn\/kuwopay\/vip-tab\/page\/cells script-path=https://github.com/zz12300/z/blob/main/js/kuwo.js, requires-body=true, timeout=60 ,tag=kuwomusic_18
 
 # > 酷我音乐_去除会员页顶部广告tab
-http-response https?:\/\/appi\.kuwo\.cn\/kuwopay\/vip-tab\/setting script-path=https://github.com/zz12300/z/blob/main/js/kuwomusic.js, requires-body=true, timeout=60 ,tag=kuwomusic_20
+http-response https?:\/\/appi\.kuwo\.cn\/kuwopay\/vip-tab\/setting script-path=https://github.com/zz12300/z/blob/main/js/kuwo.js, requires-body=true, timeout=60 ,tag=kuwomusic_20
 
 [Rewrite]
 

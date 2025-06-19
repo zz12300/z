@@ -1,6 +1,6 @@
 #!name=网易云音乐
-#!desc=解锁网易云音乐会员内容、屏蔽广告
-https://raw.githubusercontent.com/zz12300/z/refs/heads/main/Tupian/WangYY.png
+#!desc=解锁网易云音乐会员内容、屏蔽广告！软件版本：9.3.0  太高版本可能无法收到验证码
+#!icon=https://raw.githubusercontent.com/zz12300/z/refs/heads/main/Tupian/WangYY.png
 
 [Rewrite]
 # 屏蔽广告

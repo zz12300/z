@@ -22,7 +22,7 @@ http-response https?:\/\/mgxhtj\.kuwo\.cn\/mgxh\.s script-path=https://github.co
 http-response https?:\/\/appi\.kuwo\.cn\/kuwopay\/vip-tab\/page\/cells script-path=https://github.com/zz12300/z/blob/main/js/kuwomusic.js, requires-body=true, timeout=60 ,tag=kuwomusic_18
 
 # > 酷我音乐_去除会员页顶部广告tab
-http-response https?:\/\/appi\.kuwo\.cn\/kuwopay\/vip-tab\/setting script-path=https://github.com/ddgksf2013/dev/raw/main/kuwomusic.js, requires-body=true, timeout=60 ,tag=kuwomusic_20
+http-response https?:\/\/appi\.kuwo\.cn\/kuwopay\/vip-tab\/setting script-path=https://github.com/zz12300/z/blob/main/js/kuwomusic.js, requires-body=true, timeout=60 ,tag=kuwomusic_20
 
 [Rewrite]
 

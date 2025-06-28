@@ -3,7 +3,7 @@
 #!homepage=https://github.com/zz1230/z/Script/Adblock.plugin
 #!author=毒奶
 #!date=2025-06-28 
-#!icon=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/AdBlocker.
+#!icon=https://raw.githubusercontent.com/zz12300/banyun/refs/heads/main/Tupian/AdBlocker.png
 
 [Rewrite]
 ^https?:\/\/www\.novel543\.com\/log\/ad\.html - reject

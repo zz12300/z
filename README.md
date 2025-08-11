@@ -38,13 +38,6 @@
 |可莉Loon配置| ⚙️ [配置](https://github.com/zz12300/z/blob/main/Loon.conf#L2) |  ✅    |
 > 👉 更多项目请访问：[github.com/12300](https://github.com/12300)
 
----
-
-## 🌍 联系我 / 社交链接
-
-[![Email](https://img.shields.io/badge/Email-Contact-red?style=flat-square&logo=gmail&logoColor=white)](mailto:your_email@example.com)
-[![Blog](https://img.shields.io/badge/Blog-技术笔记-blue?style=flat-square&logo=hashnode)](https://yourblog.example.com)
-[![Telegram](https://img.shields.io/badge/Telegram-频道-blue?style=flat-square&logo=telegram)](https://t.me/yourchannel)
 
 ---
 

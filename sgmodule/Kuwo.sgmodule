@@ -1,45 +1,53 @@
-#!name=酷我音乐VIP
-#!desc=解锁会员皮肤&去广告
-#!author=ddgksf2013
-#!icon=https://github.com/Moli-X/Resources/raw/main/Icon/Other/KuWo.png
-#!homepage=https://github.com/Moli-X/Resources/raw/main/Loon/Kuwo/Kuwo.plugin
-#!date=2024-06-07
-#!Edit=https://github.com/Moli-X/Resources/edit/main/Loon/Kuwo/Kuwo.plugin
+#!name= 酷我音乐
+#!desc= 解锁会员权限
+#!author= 𝐎𝐍𝐙𝟑𝐕
+#!category= 𝐎𝐍𝐙𝟑𝐕
+#!tag= 𝐎𝐍𝐙𝟑𝐕
+#!homepage= https://github.com/Yuheng0101/X
+#!openUrl= https://github.com/Yuheng0101/X
+#!version= 1.1.0
+#!date= 2025-12-22
+
+[Rule]
+DOMAIN,mobilead.kuwo.cn,REJECT
+DOMAIN,rich.kuwo.cn,REJECT
+DOMAIN-KEYWORD,rich.kuwo.cn,REJECT
+DOMAIN-KEYWORD,mobilead.kuwo.cn,REJECT
+DOMAIN-SUFFIX,c.kuwo.cn,REJECT
+DOMAIN-SUFFIX,deliver.kuwo.cn,REJECT
+DOMAIN-SUFFIX,game.kuwo.cn,REJECT
+DOMAIN-SUFFIX,kuwoyy.com,REJECT
+DOMAIN-SUFFIX,kwmsg.kuwo.cn,REJECT
+DOMAIN-SUFFIX,msclick2.kuwo.cn,REJECT
+DOMAIN-SUFFIX,msphoneclick.kuwo.cn,REJECT
+DOMAIN-SUFFIX,updatepage.kuwo.cn,REJECT
+DOMAIN-SUFFIX,wa.kuwo.cn,REJECT
+DOMAIN-SUFFIX,webstat.kuwo.cn,REJECT
+DOMAIN-SUFFIX,mobilead.kuwo.cn,REJECT
+DOMAIN-SUFFIX,rich.kuwo.cn,REJECT
+DOMAIN-SUFFIX,ad.kuwo.cn,REJECT
 
 [Map Local]
-# > 酷我音乐_通用广告请求
-https?:\/\/vip1\.kuwo\.cn\/vip\/activity\/kwMemberDay data-type=text data=" " status-code=200
-
-# > 酷我音乐_屏蔽热词
-https?:\/\/hotword\.kuwo\.cn\/hotword\.s data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
-# > 酷我音乐_通用广告请求
-https?:\/\/vip1\.kuwo\.cn\/vip_adv\/ data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-
-# > 酷我音乐_通用广告请求
-https?:\/\/wapi\.kuwo\.cn\/openapi\/v1\/app\/pasterAdvert data-type=text data=" " status-code=200
-
-# > 酷我音乐_应用内弹窗及右下角
-^https?:\/\/mobilead\.kuwo\.cn\/ data-type=text data=" " status-code=200
-
-# > 酷我音乐_开屏广告
-https?:\/\/rich\.kuwo\.cn\/AdService data-type=text data=" " status-code=200
+# 广告
+^https?:\/\/audiobookpay\.kuwo\.cn\/a\.p\?op=get_advertright_endtime data-type=text data="{}" status-code=200 header="Content-Type:application/json"
 
 [Script]
-# > 酷我音乐_会员
-酷我音乐 = type=http-response, pattern=^https?:\/\/(?:musicpay|nmobi|vip1|audiobookpay|tingshu)\.kuwo\.cn\/(?:music\.pay\?newver=\d+|mobi.s\?f=kwxs|vip\/(?:enc\/user\/vip\?op=ui&uid=|v2\/theme\?op=gd)|a\.p|v2\/api\/pay\/user\/info), script-path=https://github.com/Moli-X/Resources/raw/main/Loon/Kuwo/Kuwo.js, requires-body=true, timeout=60
+酷我音乐 = type=http-response, pattern=^https?:\/\/(mgxhtj|nmobi|searchrecterm)\.kuwo\.cn\/(mgxh|mobi|recterm)\.s, script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/kuwo/kuwo.js, requires-body=true, timeout=60
 
-# > 酷我音乐_搜索框处理
-kuwomusic_14 = type=http-response, pattern=https?:\/\/searchrecterm\.kuwo\.cn\/recterm\.s, script-path=https://github.com/ddgksf2013/dev/raw/main/kuwomusic.js, requires-body=true, timeout=60
+[Script]
+# ========== 酷我 ==========
+酷我修改会员信息 = type=http-response, pattern=^https?:\/\/vip1\.kuwo\.cn\/vip\/enc\/user\/vip, script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/kuwo.js, requires-body=true, max-size=-1, timeout=60
+酷我修改音乐信息 = type=http-request, pattern=^https?:\/\/music(pay)?\.kuwo\.cn\/music.pay\?newver=3, script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/kuwo.js, requires-body=true, max-size=-1, timeout=60
+酷我修改播放接口 = type=http-response, pattern=^https?:\/\/.+\.kuwo\.cn\/mobi\.s\?f=kwxs&q=, script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/kuwo.js, requires-body=true, max-size=-1, timeout=60
+酷我听书伪装会员 = type=http-response, pattern=^https?:\/\/tingshu\.kuwo\.cn\/api\/v2\/pay\/app\/getConfigInfo, script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/kuwo.js, requires-body=true, max-size=-1, timeout=60
+酷我听书列表横幅 = type=http-response, pattern=^https?:\/\/tingshu\.kuwo\.cn\/v2\/api\/pay\/payInfo\/kwplayer\/payMiniBar, script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/kuwo.js, requires-body=true, max-size=-1, timeout=60
+酷我修改听书信息 = type=http-request, pattern=^https?:\/\/audiobookpay\.kuwo\.cn\/a\.p\?simpleToken=1, script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/kuwo.js, requires-body=true, max-size=-1, timeout=60
+酷我修改漫剧信息 = type=http-response, pattern=^https?:\/\/audiobookpay\.kuwo\.cn\/a\.p\?newver=3, script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/kuwo.js, requires-body=true, max-size=-1, timeout=60
+酷我解锁会员皮肤 = type=http-response, pattern=^https?:\/\/vip1\.kuwo\.cn\/(commercia\/)?vip\/(v2\/theme\?op\=gd|(player\/getStyleListByModel|hanger\/wear)), script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/kuwo.js, requires-body=true, max-size=-1, timeout=60
+酷我解锁会员信息 = type=http-response, pattern=^https?:\/\/vip1\.kuwo\.cn\/vip\/v2\/user\/vip, script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/kuwo.js, requires-body=true, max-size=-1, timeout=60
+酷我去除装扮横幅 = type=http-response, pattern=^https?:\/\/vip1\.kuwo\.cn\/commercia\/vip\/dressCenter\/getTabList, script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/kuwo.js, requires-body=true, max-size=-1, timeout=60
+酷我个人信息修改 = type=http-response, pattern=^https?:\/\/vip1\.kuwo\.cn\/commercia\/vipTab\/myTab\/base, script-path=https://raw.githubusercontent.com/Yuheng0101/X/main/Scripts/kuwo.js, requires-body=true, max-size=-1, timeout=60
 
-# > 酷我音乐_去除首页轮播广告和tips
-kuwomusic_16 = type=http-response, pattern=https?:\/\/mgxhtj\.kuwo\.cn\/mgxh\.s, script-path=https://github.com/ddgksf2013/dev/raw/main/kuwomusic.js, requires-body=true, timeout=60
-
-# > 酷我音乐_去除会员页广告
-kuwomusic_18 = type=http-response, pattern=https?:\/\/appi\.kuwo\.cn\/kuwopay\/vip-tab\/page\/cells, script-path=https://github.com/ddgksf2013/dev/raw/main/kuwomusic.js, requires-body=true, timeout=60
-
-# > 酷我音乐_去除会员页顶部广告tab
-kuwomusic_20 = type=http-response, pattern=https?:\/\/appi\.kuwo\.cn\/kuwopay\/vip-tab\/setting, script-path=https://github.com/ddgksf2013/dev/raw/main/kuwomusic.js, requires-body=true, timeout=60
 
 [MITM]
-hostname = %APPEND% *.kuwo.cn
+hostname = %APPEND% audiobookpay.kuwo.cn, mgxhtj.kuwo.cn, nmobi.kuwo.cn, searchrecterm.kuwo.cn, musicpay.kuwo.cn, vip1.kuwo.cn,*kuwo.cn

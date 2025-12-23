@@ -50,4 +50,4 @@ DOMAIN-SUFFIX,ad.kuwo.cn,REJECT
 
 
 [MITM]
-hostname = %APPEND% audiobookpay.kuwo.cn, mgxhtj.kuwo.cn, nmobi.kuwo.cn, searchrecterm.kuwo.cn, musicpay.kuwo.cn, vip1.kuwo.cn,*kuwo.cn
+hostname = %APPEND% audiobookpay.kuwo.cn, mgxhtj.kuwo.cn, nmobi.kuwo.cn, searchrecterm.kuwo.cn, musicpay.kuwo.cn, vip1.kuwo.cn,*.kuwo.cn

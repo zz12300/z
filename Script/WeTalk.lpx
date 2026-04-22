@@ -8,10 +8,10 @@ CRON−WeTalk=input,"0 9,20 * * *",tag=CRON−WeTalk, desc=CRON−WeTalk
 
 
 [Script]
-http-response ^https:\/\/api\.wetalkapp\.com\/app\/queryBalanceAndBonus script-path=WeTalk.js, requires-body=true, timeout=60, tag=Wetalk_GetCookie, enable = {token获取}
+http-response ^https:\/\/api\.wetalkapp\.com\/app\/queryBalanceAndBonus script-path=https://github.com/zz12300/z/blob/main/js/WeTalk.js, requires-body=true, timeout=60, tag=Wetalk_GetCookie, enable = {token获取}
 
 
-cron {CRON−WeTalk} script-path=WeTalk.js, timeout=60, tag=WeTalk_CheckIn
+cron {CRON−WeTalk} script-path=https://github.com/zz12300/z/blob/main/js/WeTalk.js, timeout=60, tag=WeTalk_CheckIn
 
 [MITM]
 hostname = api.wetalkapp.com

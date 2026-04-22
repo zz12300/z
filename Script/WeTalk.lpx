@@ -1,6 +1,7 @@
 #!name=WeTalk 自动化签到+视频奖励
 #!desc=WeTalk 签到做任务白嫖国外手机号\n\nCRON−WeTalk:脚本运行时间(默认早上9点和晚上20点)
-
+#!author=TG@ZenMoFiShi
+#!icon=
 
 [Argument]
 token获取 = switch, true, true, tag = 抓取Token开关, desc = 默认开启。抓取Token成功后, 可关闭此开关

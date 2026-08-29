@@ -1,6 +1,6 @@
 #!name=APNs 苹果推送代理修复
 #!desc=解决蜂窝网络下 iOS/Telegram 推送延迟或失效问题，将 APNs 推送流量路由至 PROXY。
-#!icon=
+#!icon=https://raw.githubusercontent.com/zz12300/z/refs/heads/main/Tupian/IMG_7706.jpeg
 [Rule]
 # 精准匹配 APNs 推送与身份认证域名
 DOMAIN,identity.apple.com,PROXY

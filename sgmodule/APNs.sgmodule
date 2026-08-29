@@ -1,0 +1,18 @@
+#!name=APNs 苹果推送代理修复
+#!desc=解决蜂窝网络下 iOS/Telegram 推送延迟或失效问题，将 APNs 推送流量路由至 PROXY。
+#!icon=
+[Rule]
+# 精准匹配 APNs 推送与身份认证域名
+DOMAIN,identity.apple.com,PROXY
+DOMAIN-SUFFIX,push.apple.com,PROXY
+
+# 苹果 APNs 官方专用核心 IPv4 网段
+IP-CIDR,17.252.0.0/16,PROXY,no-resolve
+IP-CIDR,17.57.144.0/22,PROXY,no-resolve
+IP-CIDR,17.188.0.0/16,PROXY,no-resolve
+
+# 苹果 APNs 官方专用核心 IPv6 网段
+IP-CIDR6,2620:149:a44::/48,PROXY,no-resolve
+IP-CIDR6,2403:300:a42::/48,PROXY,no-resolve
+IP-CIDR6,2403:300:a51::/48,PROXY,no-resolve
+IP-CIDR6,2a01:b740:a42::/48,PROXY,no-resolve

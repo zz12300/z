@@ -1,0 +1,10 @@
+{
+  "name": "My Custom Icon Set",
+  "description": "自定义 Egern 图标集",
+  "icons": [
+    {
+      "name": "Umaru",
+      "url": "https://cdn.jsdelivr.net/gh/zz12300/zz12300@main/umaru.png"
+    }
+  ]
+}

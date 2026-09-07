@@ -4,12 +4,11 @@
   "icons": [
     {
       "name": "zou666机场图标",
-      "url": "https://raw.githubusercontent.com/zz12300/z/refs/heads/main/Tupian/IMG_7850.png"
+      "url": "https://cdn.jsdelivr.net/gh/zz12300/z@main/Tupian/IMG_7850.png"
     },
     {
-      "name": "Youtube&Google",
-      "url": "https://raw.githubusercontent.com/zz12300/z/refs/heads/main/Tupian/Google.PNG"
+      "name": "Youtube_Google",
+      "url": "https://cdn.jsdelivr.net/gh/zz12300/z@main/Tupian/Google.PNG"
     }
   ]
 }
-

@@ -6,7 +6,7 @@
 #!loon_version = 3.5.1(983)
 #!homepage = https://github.com/devchristian1337/loon-plugins/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/devchristian1337/loon-plugins/refs/heads/main/App-Icons/youtube.png
-#!date = 2026-10-17
+#!date = 2026-10-25
 
 [Argument]
 background_playback = switch,false,tag=后台播放,desc=切换 App 或锁屏后,普通视频继续播放音频。直播和受限内容仍由 YouTube 决定
@@ -15,7 +15,8 @@ translation_enabled = switch,false,tag=字幕翻译,desc=将已有字幕翻译�
 translation_target = select,"zh-CN","en-US",tag=字幕目标语言,desc=仅转换已有字幕轨道(简体中文 zh-CN 或美式英语 en-US)。没有字幕的视频无法翻译;音轨、标题和简介不变
 hide_home_shorts = switch,false,tag=隐藏首页 Shorts,desc=移除首页信息流中的 Shorts 栏目。底部 Shorts 标签页和其他页面保持不变
 blocked_channels = input,"",tag=屏蔽频道,desc=填写频道 ID、@用户名或完整频道名称,用空格分隔。优先使用频道 ID;名称含空格时请使用用户名或 ID。留空则不启用。只隐藏能识别出发布者的视频
-blocked_channels_url = input,"",tag=远程屏蔽频道链接,desc=公开的 HTTPS 纯文本直链(如 GitHub Raw)。本地缓存每小时刷新一次,也可手动运行更新脚本。与手动列表合并使用。留空则不启用
+blocked_channels_url = input,"",tag=远程屏蔽频道链接,desc=Public HTTPS plain-text direct link (e.g. GitHub Raw). Local cache refreshes hourly when the scheduled update is on, or run the update script. Merged with the manual list. Leave empty to disable
+blocked_channels_update = switch,false,tag=Blocked channels scheduled update,desc=Refreshes the remote blocked channels list every hour. Only needed with a remote list URL: when off, the hourly task does not run and the list can still be refreshed with the update script
 log_enabled = switch,false,tag=日志工具,desc=首次匹配到请求时自动启动,并通知日志入口。关闭后,下一次 API 命中会清除日志并停止采样,需要的话请先下载。完整采样可能增加延迟
 quality_research = switch,false,tag=质量研究采样,desc=仅在日志工具开启时生效。记录可识别的画质与格式参数,并读取小型媒体 POST 请求用于对比。不会自动切换画质
 media_capture_mode = select,"headers","full",tag=媒体采样模式,desc=仅在日志工具开启时生效,日志关闭时自动停用。headers 只记录响应头;full 读取完整响应用于开发,可能增加延迟
@@ -40,8 +41,8 @@ request if ${url} ~= /^https:\/\/[a-z0-9-]+\.googlevideo\.com\/initplayback(?:\?
 
 [Script]
 # 独立刷新频道列表缓存。信息流脚本只读缓存,不会等待远程下载。
-# 2026-10-07 更新
-cron "0 * * * *" script-path=https://raw.githubusercontent.com/devchristian1337/loon-plugins/refs/heads/main/Scripts/YouTube/request.min.js,timeout=10,argument=[{blocked_channels_url}],tag=YouTube 定时更新屏蔽频道
+# Updated 2026-10-25. Runs only when the scheduled update switch is on, so users without a remote list do not get an hourly task.
+cron "0 * * * *" script-path=https://raw.githubusercontent.com/devchristian1337/loon-plugins/refs/heads/main/Scripts/YouTube/request.min.js,timeout=10,enable={blocked_channels_update},argument=[{blocked_channels_url}],tag=YouTube 定时更新屏蔽频道
 generic script-path=https://raw.githubusercontent.com/devchristian1337/loon-plugins/refs/heads/main/Scripts/YouTube/request.min.js,timeout=10,argument=[{blocked_channels_url}],tag=YouTube 更新屏蔽频道,img-url=person.crop.circle.badge.xmark.system
 http-request ^https:\/\/(?:www\.|m\.)?youtube\.com\/api\/timedtext\?[^#]+$ script-path=https://raw.githubusercontent.com/devchristian1337/loon-plugins/refs/heads/main/Scripts/YouTube/request.min.js,requires-body=false,timeout=10,enable={translation_enabled},argument=[{translation_enabled},{translation_target}],tag=YouTube 字幕目标语言
 # 仅在日志和质量研究都明确开启时读取 videoplayback POST。不会命中空白 init 视频。
@@ -57,7 +58,7 @@ http-response ^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.)?you
 
 http-request ^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(?:player|get_watch)(?:\?[^#]*)?$|^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/player\/ad_break(?:\?[^#]*)?$ script-path=https://raw.githubusercontent.com/devchristian1337/loon-plugins/refs/heads/main/Scripts/YouTube/request.min.js,requires-body=true,binary-body-mode=true,timeout=10,argument=[{log_enabled},{log_level},{capture_budget},{playback_region}],tag=YouTube 播放请求与广告配置处理
 
-# 搜索响应(protobuf,iOS App)同样会清理:赞助结果及其分隔线。2026-10-17 更新。
+# Search responses (protobuf, iOS app) are cleaned too: sponsored results and their dividers. The in-feed ad the Home feed loads a few seconds later (deferred update) is removed as well. Updated 2026-10-25.
 http-response ^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(browse|next|search)(\?[^#]*)?$ script-path=https://raw.githubusercontent.com/devchristian1337/loon-plugins/refs/heads/main/Scripts/YouTube/response.min.js,requires-body=true,binary-body-mode=true,timeout=10,argument=[{log_enabled},{log_level},{capture_budget},{hide_home_shorts},{blocked_channels},{blocked_channels_url}],tag=YouTube 信息流广告与首页 Shorts 处理
 http-response ^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(player|get_watch)(\?[^#]*)?$|^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/reel\/reel_watch_sequence(?:\?[^#]*)?$ script-path=https://raw.githubusercontent.com/devchristian1337/loon-plugins/refs/heads/main/Scripts/YouTube/response.min.js,requires-body=true,binary-body-mode=true,timeout=10,argument=[{log_enabled},{log_level},{capture_budget},{background_playback},{quality_research}],tag=YouTube 播放响应与后台播放
 

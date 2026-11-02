@@ -1,19 +1,21 @@
 #!name = YouTube 去广告
-#!desc = 去除 YouTube App 广告,支持后台播放,并可翻译已有字幕轨道(目标语言 zh-CN 或 en-US,没有字幕的视频无法翻译)。日志默认只记录媒体响应头,完整采样可能增加延迟。需要开启 MITM 并信任证书。
+#!desc = Removes ads from the YouTube app (feed, search, Shorts and player), optional background playback, Shorts shelves and bottom bar buttons hiding, manual or remote channel blocklist, subtitle translation to zh-CN or en-US. Logging captures media response headers only by default, full sampling may add delay. Requires MITM with a trusted certificate.
 #!openUrl = https://loon-plugins.vercel.app
 #!author = devchristian1337
 #!tag = YouTube, AdBlock
+#!system = iOS,iPadOS,macOS
 #!loon_version = 3.5.1(983)
 #!homepage = https://github.com/devchristian1337/loon-plugins/blob/main/README.md
 #!icon = https://raw.githubusercontent.com/devchristian1337/loon-plugins/refs/heads/main/App-Icons/youtube.png
-#!date = 2026-10-31
+#!date = 2026-11-01
 
 [Argument]
 background_playback = switch,false,tag=后台播放,desc=切换 App 或锁屏后,普通视频继续播放音频。直播和受限内容仍由 YouTube 决定
-playback_region = select,"original","CN","HK","TW","US","JP","KR","SG","GB","DE","RU",tag=播放请求地区,desc=original 表示保持当前地区。仅修改客户端 gl 参数,出口 IP 不变。去广告效果有待验证
+playback_region = select,"original","CN","HK","TW","US","JP","KR","SG","GB","DE","RU",tag=播放请求地区,desc=original keeps the current region. Only changes the client gl parameter of playback requests, the exit IP is unchanged. Does not affect ad blocking
 translation_enabled = switch,false,tag=字幕翻译,desc=将已有字幕翻译为所选目标语言。关闭时保持原始字幕请求
 translation_target = select,"zh-CN","en-US",tag=字幕目标语言,desc=仅转换已有字幕轨道(简体中文 zh-CN 或美式英语 en-US)。没有字幕的视频无法翻译;音轨、标题和简介不变
 hide_home_shorts = switch,false,tag=隐藏首页 Shorts,desc=Removes the Shorts shelf from the Home feed. Other pages are kept, the bottom Shorts tab has its own switch
+hide_shorts_everywhere = switch,false,tag=Hide Shorts shelves everywhere,desc=Removes the Shorts shelves from every feed of the app, including search results, Subscriptions and channel pages, when they use the same shelf layout as the Home feed. Includes the Home shelf, so the Home switch is not needed. Single Shorts results and the Shorts tab are kept
 hide_shorts_tab = switch,false,tag=Hide Shorts tab,desc=Removes the Shorts button from the bottom bar of the app. Shorts stay reachable from the feed and from channels. The app caches the bar for about an hour, so restart it to see the change
 hide_create_button = switch,false,tag=Hide Create button,desc=Removes the Create (+) button from the bottom bar of the app. Uploads stay possible from other entry points. The app caches the bar for about an hour, so restart it to see the change
 blocked_channels = input,"",tag=屏蔽频道,desc=填写频道 ID、@用户名或完整频道名称,用空格分隔。优先使用频道 ID;名称含空格时请使用用户名或 ID。留空则不启用。只隐藏能识别出发布者的视频
@@ -62,7 +64,7 @@ http-request ^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music
 # Bottom bar (guide endpoint, iOS app): removes the Shorts tab and the Create button when the switches are on. Always matched so either switch can enable it, the script passes the response through when both are off. Added 2026-10-31.
 http-response ^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.)?youtube\.com)\/youtubei\/v1\/guide(?:\?[^#]*)?$ script-path=https://raw.githubusercontent.com/devchristian1337/loon-plugins/refs/heads/main/Scripts/YouTube/response.min.js,requires-body=true,binary-body-mode=true,timeout=10,argument=[{log_enabled},{log_level},{capture_budget},{hide_shorts_tab},{hide_create_button}],tag=YouTube bottom bar Shorts tab and Create button
 # Search responses (protobuf, iOS app) are cleaned too: sponsored results and their dividers. The in-feed ad the Home feed loads a few seconds later (deferred update) is removed as well. Updated 2026-10-25.
-http-response ^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(browse|next|search)(\?[^#]*)?$ script-path=https://raw.githubusercontent.com/devchristian1337/loon-plugins/refs/heads/main/Scripts/YouTube/response.min.js,requires-body=true,binary-body-mode=true,timeout=10,argument=[{log_enabled},{log_level},{capture_budget},{hide_home_shorts},{blocked_channels},{blocked_channels_url}],tag=YouTube 信息流广告与首页 Shorts 处理
+http-response ^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(browse|next|search)(\?[^#]*)?$ script-path=https://raw.githubusercontent.com/devchristian1337/loon-plugins/refs/heads/main/Scripts/YouTube/response.min.js,requires-body=true,binary-body-mode=true,timeout=10,argument=[{log_enabled},{log_level},{capture_budget},{hide_home_shorts},{hide_shorts_everywhere},{blocked_channels},{blocked_channels_url}],tag=YouTube feed ads and Shorts shelves handling
 http-response ^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/(player|get_watch)(\?[^#]*)?$|^https:\/\/(?:youtubei(?:-att)?\.googleapis\.com|(?:www\.|m\.|music\.)?youtube\.com)\/youtubei\/v1\/reel\/reel_watch_sequence(?:\?[^#]*)?$ script-path=https://raw.githubusercontent.com/devchristian1337/loon-plugins/refs/heads/main/Scripts/YouTube/response.min.js,requires-body=true,binary-body-mode=true,timeout=10,argument=[{log_enabled},{log_level},{capture_budget},{background_playback},{quality_research}],tag=YouTube 播放响应与后台播放
 
 [Mitm]
